@@ -18,7 +18,7 @@ geturl=r'https://api.github.com/repos/'+gh_repo+r'/actions/secrets/public-key'
 #puturl=r'https://api.github.com/repos/'+gh_repo+r'/actions/secrets/MS_TOKEN'
 key_id='wangziyingwen'
 
-#公钥获取
+#公钥获取1
 def getpublickey(Auth,geturl):
     headers={'Accept': 'application/vnd.github.v3+json','Authorization': Auth}
     html = req.get(geturl,headers=headers)
@@ -32,7 +32,7 @@ def getpublickey(Auth,geturl):
     key_id = jsontxt['key_id']
     return public_key
 
-#微软refresh_token获取
+#微软refresh_token获取1
 def getmstoken(ms_token,appnum):
     headers={'Content-Type':'application/x-www-form-urlencoded'
             }
