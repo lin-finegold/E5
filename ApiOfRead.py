@@ -54,7 +54,7 @@ api_list = [
            r'https://graph.microsoft.com/beta/me/messages?$select=internetMessageHeaders&$top',
            ]
 
-#微软refresh_token获取
+#微软refresh_token获取1
 def getmstoken(ms_token,appnum):
     headers={'Content-Type':'application/x-www-form-urlencoded'
             }
@@ -74,7 +74,7 @@ def getmstoken(ms_token,appnum):
     access_token = jsontxt['access_token']
     return access_token
 
-#调用函数
+#调用函数1
 def runapi(apilist,a):
     localtime = time.asctime( time.localtime(time.time()) )
     access_token=access_token_list[a-1]
