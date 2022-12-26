@@ -226,7 +226,4 @@ for _ in range(1,config['rounds']+1):
         if config['allstart'] == 1 or 4 in choosenum:
             print('onenote操作')
             onenoteWrite(a,'QVQ'+str(random.randint(1,600)))
-	        if config['allstart'] == 1 or 5 in choosenum:
-            print('od操作')
-            onenoteWrite(a,'QVQ'+str(random.randint(1,600)))
         print('-')
