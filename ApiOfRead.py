@@ -2,14 +2,15 @@
 import os
 import requests as req
 import json,sys,time,random
-
+# 获取环境变量中的应用数量，默认为'1'
 app_num=os.getenv('APP_NUM')
 if app_num == '':
     app_num = '1'
-access_token_list=['wangziyingwen']*int(app_num)
+ # 创建一个列表，存储access_token，初始值为'wangziyingwen'
+access_token_list=['linlinlinlin']*int(app_num)
 ###########################
 # config选项说明
-# 0：关闭  ， 1：开启  jianyi
+# 0：关闭  ， 1：开启  建议
 # api_rand：是否随机排序api （开启随机抽取12个，关闭默认初版10个）。默认1开启
 # rounds: 轮数，即每次启动跑几轮。
 # rounds_delay: 是否开启每轮之间的随机延时，后面两参数代表延时的区间。默认0关闭
@@ -19,10 +20,11 @@ access_token_list=['wangziyingwen']*int(app_num)
 config = {
          'api_rand': 1,
          'rounds': 3,
-         'rounds_delay': [0,60,120],
+         'rounds_delay': [1,60,120],
          'api_delay': [0,2,6],
          'app_delay': [0,30,60],
          }
+# API列表，包含了多个Microsoft Graph API的URL
 api_list = [
            r'https://graph.microsoft.com/v1.0/me/',
            r'https://graph.microsoft.com/v1.0/users',
