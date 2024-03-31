@@ -6,8 +6,8 @@ import json,sys,time,random
 
 #reload(sys)
 #sys.setdefaultencoding('utf-8')
-emailaddress=os.getenv('EMAIL')
-app_num=os.getenv('APP_NUM')
+emailaddress=os.getenv('EMAIL')  # 获取环境变量中的邮箱地址
+app_num=os.getenv('APP_NUM') # 获取环境变量中的应用数量
 ###########################
 # config选项说明
 # 0：关闭  ， 1：开启 jianyixiugai
@@ -18,10 +18,10 @@ app_num=os.getenv('APP_NUM')
 # app_delay: 是否开启账号之间的延时，默认0关闭
 ########################################
 config = {
-         'allstart': 0,
+         'allstart': 1,
          'rounds': 1,
-         'rounds_delay': [0,0,5],
-         'api_delay': [0,0,5],
+         'rounds_delay': [1,0,5],
+         'api_delay': [1,0,5],
          'app_delay': [0,0,5],
          }        
 if app_num == '':
@@ -29,7 +29,7 @@ if app_num == '':
 city=os.getenv('CITY')
 if city == '':
     city = 'Beijing'
-access_token_list=['wangziyingwen']*int(app_num)
+access_token_list=['linlinlinlin']*int(app_num)
 
 #微软refresh_token获取
 def getmstoken(ms_token,appnum):
