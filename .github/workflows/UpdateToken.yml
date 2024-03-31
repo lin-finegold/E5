@@ -3,20 +3,20 @@ name: Update Token
 
 on: 
   release:
-    types: [published]
+    types: [published]  # 当发布新版本时触发
   push:
     tags:
-    - 'v*'
+    - 'v*'  # 当推送带有特定标签的提交时触发
   #  branches: 
-  #    - master
+  #    - master # 当推送到master分支时触发（当前被注释掉）
   schedule:
-    - cron: '10 10 * * 1,4,6'
+    - cron: '10 10 * * 1,4,6'   # 设置定时任务，每周一、四、六的10:10执行
   watch:
-    types: [started]
+    types: [started]   # 当有人star这个仓库时触发
    
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # 运行在最新版本的Ubuntu虚拟环境上
     if: github.event.repository.owner.id == github.event.sender.id  # 自己点的 start
     steps:
     - name: Checkout
@@ -57,4 +57,4 @@ jobs:
         CLIENT_ID_n: ${{ secrets.CLIENT_ID_n }}
         CLIENT_SECRET_n: ${{ secrets.CLIENT_SECRET_n }}
       run: |
-        python UpdateToken.py
+        python UpdateToken.py  # 执行更新Token的Python脚本
